@@ -16,6 +16,11 @@ You should alias this application with the following command
 alias ocp="node index.js"
 ```
 
+You need to login to your cluster before using this tool
+```
+oc login
+```
+
 Show the groups your a member of
 ```
 $ ocp -m
