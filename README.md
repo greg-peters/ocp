@@ -9,21 +9,25 @@ alias ocp="node index.js"
 
 Show the groups your a member of
 ```
-ocp -m
+$ ocp -m
+ocp-admins
 ```
 
 Show cluster role bindings
 ```
 ocp -b
+{...}
 ```
 
 Show user information
 ```
 ocp -u <username>
+{...}
 ```
 
 Show group information
 ```
 ocp -g <group>
+{...}
 ```
 
