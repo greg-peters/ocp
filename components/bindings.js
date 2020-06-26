@@ -9,4 +9,26 @@ function getBindingsByNamespace(env) {
     return Promise.all(promises);
 }
 
+function getBinding(env,binding) {
+    var promises = [];
+    promises.push(roleBindings.getRoleBinding(env,binding));
+    return Promise.all(promises);
+}
+
+function getNamespacesByBinding(env,binding) {
+    return new Promise(function(resolve,reject) {
+        roleBindings.getRoleBindings(env).then(function(results) {
+            var bindings = [];
+            for(var i=0;i < results.items.length; i++) {
+                if(results.items[i].metadata.name === binding) {
+                    bindings.push(results.items[i]);
+                }
+            }
+            resolve(bindings);
+        });
+    });
+}
+
 module.exports.getBindingsByNamespace = getBindingsByNamespace;
+module.exports.getBinding = getBinding;
+module.exports.getNamespacesByBinding = getNamespacesByBinding;
