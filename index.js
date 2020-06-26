@@ -1,6 +1,5 @@
 const { exec } = require("child_process");
 const parser = require("./cmd-parser");
-const listCmd = require('./userCmd');
 
 var env = {};
 buildEnvironment().then(function() {
